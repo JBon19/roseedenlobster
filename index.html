@@ -72,12 +72,76 @@ const SITE_CONFIG = {
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --red: #B91C1C; --red-dark: #7F1D1D; --red-bright: #DC2626;
-  --black: #0F0F0F; --charcoal: #1A1A1A;
-  --cream: #FDF6EC; --cream-dark: #F5E6CC;
-  --gold: #D4A843; --gold-light: #E8C96A;
-  --white: #FAFAFA; --gray: #6B6B6B;
+  --red: #C1272D; --red-dark: #8B1A1F; --red-bright: #D63538;
+  --navy: #0F2A44; --navy-dark: #0A1E33; --navy-light: #1C3E5C;
+  --cream: #FAF4E8; --cream-dark: #EDE0C7;
+  --gold: #C9A24B; --gold-light: #D9B968;
+  --gray: #7A7366;
+
+  /* Theme mapping */
+  --black: var(--cream);
+  --charcoal: #F3EAD5;
 }
+
+body { color: var(--navy) !important; }
+nav { background: rgba(250,244,232,0.95) !important; border-bottom-color: rgba(193,39,45,0.25) !important; }
+nav .logo { color: var(--navy) !important; }
+nav ul li a { color: var(--navy-light) !important; }
+nav ul li a:hover { color: var(--red) !important; }
+.hamburger span { background: var(--navy) !important; }
+
+.hero h1 .rose-eden { color: var(--navy) !important; }
+.hero h1 .bon-temps { color: var(--red) !important; }
+.hero h1 .at { color: var(--gold) !important; }
+.hero-sub { color: var(--navy-light) !important; }
+.hero-address { color: var(--gray) !important; }
+.hero::before { background: repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(15,42,68,0.04) 60px, rgba(15,42,68,0.04) 61px) !important; }
+
+.btn-primary { background: var(--red) !important; color: var(--cream) !important; border-color: var(--red) !important; }
+.btn-primary:hover { background: var(--red-dark) !important; border-color: var(--red-dark) !important; }
+.btn-outline { color: var(--navy) !important; border-color: var(--navy) !important; }
+.btn-outline:hover { border-color: var(--red) !important; color: var(--red) !important; background: transparent !important; }
+
+.divider { color: var(--red) !important; opacity: 0.6 !important; }
+
+.section-label { color: var(--red) !important; }
+.section-title { color: var(--navy) !important; }
+
+#about .about-text p { color: var(--navy-light) !important; }
+#about .about-sidebar { border-left-color: var(--navy) !important; }
+#about .about-sidebar .fact-label { color: var(--red) !important; }
+#about .about-sidebar .fact-value { color: var(--navy) !important; }
+
+.menu-placeholder { border-color: rgba(15,42,68,0.3) !important; background: rgba(15,42,68,0.04) !important; }
+.menu-placeholder p { color: var(--navy-light) !important; }
+.menu-image img { border-color: rgba(15,42,68,0.3) !important; }
+
+#catering { background: var(--navy) !important; }
+#catering .section-title, #catering p, #catering h2 { color: var(--cream) !important; }
+#catering .section-label { color: var(--gold-light) !important; }
+.catering-card { background: rgba(250,244,232,0.06) !important; border-color: rgba(250,244,232,0.2) !important; }
+.catering-card:hover { border-color: var(--red) !important; background: rgba(250,244,232,0.1) !important; }
+.catering-card h3 { color: var(--cream) !important; }
+.catering-card p { color: var(--cream-dark) !important; }
+.catering-contact { border-color: var(--gold) !important; }
+.catering-contact p, .catering-contact a { color: var(--gold-light) !important; }
+
+.contact-info .info-label { color: var(--red) !important; }
+.contact-info .info-value { color: var(--navy-light) !important; }
+.contact-info .info-value a { color: var(--navy) !important; }
+.contact-info .info-value a:hover { color: var(--red) !important; }
+.map-container { border-color: rgba(15,42,68,0.3) !important; }
+.map-container iframe { filter: none !important; }
+
+.socials-bar { background: #F3EAD5 !important; }
+.socials-bar > p { color: var(--navy-light) !important; }
+.social-links a { border-color: rgba(15,42,68,0.2) !important; color: var(--navy) !important; }
+.social-links a:hover { border-color: var(--red) !important; color: var(--red) !important; background: rgba(193,39,45,0.06) !important; }
+
+footer { background: var(--navy) !important; border-top-color: var(--navy-dark) !important; }
+footer p { color: var(--cream-dark) !important; }
+
+.hero { background: radial-gradient(ellipse at 20% 80%, rgba(193,39,45,0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(15,42,68,0.04) 0%, transparent 50%), var(--cream) !important; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Josefin Sans', sans-serif; background: var(--black); color: var(--cream); overflow-x: hidden; }
 
