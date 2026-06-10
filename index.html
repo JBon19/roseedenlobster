@@ -40,7 +40,7 @@ const SITE_CONFIG = {
   // Upload your whiteboard photo alongside this index.html file
   // on Cloudflare, then paste the filename below.
   // Leave as "" to show the "coming soon" placeholder.
-  menuImageURL:     "https://imgur.com/a/2S5Zbou",
+  menuImageURL:     "https://i.imgur.com/pd5vK4q.jpeg",
   // Example when ready:
   // menuImageURL:  "menu-board.jpg",
 
@@ -232,6 +232,13 @@ section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
 .social-links a:hover { border-color: var(--red-bright); color: var(--red-bright); background: rgba(185,28,28,0.08); }
 .social-links a svg { width: 18px; height: 18px; fill: currentColor; }
 
+#gallery .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+#gallery .gallery-item { aspect-ratio: 1 / 1; overflow: hidden; border: 2px solid rgba(15,42,68,0.15); transition: all 0.3s; }
+#gallery .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+#gallery .gallery-item:hover { border-color: var(--red); }
+#gallery .gallery-item:hover img { transform: scale(1.05); }
+@media (max-width: 768px) { #gallery .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
 footer { text-align: center; padding: 2.5rem 2rem; border-top: 1px solid rgba(185,28,28,0.2); background: var(--black); }
 footer p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; }
 
@@ -298,7 +305,20 @@ footer p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; }
 </section>
 
 <div class="divider">&#9874; &#9874; &#9874;</div>
+  
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="section-label">A Taste of the Shack</p>
+  <h2 class="section-title">See For Yourself</h2>
+  <div class="gallery-grid">
 
+    <div class="gallery-item"><img src="https://i.imgur.com/YOUR_IMAGE_ID.jpg" alt="Rose Eden Lobster"></div>
+    <!-- Copy the line above and paste it below to add more photos -->
+
+  </div>
+</section>
+
+<div class="divider">&#9874; &#9874; &#9874;</div>
 <section id="menu">
   <p class="section-label">What We're Servin'</p>
   <h2 class="section-title">The Menu</h2>
