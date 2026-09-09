@@ -36,14 +36,6 @@ const SITE_CONFIG = {
   // Example when ready:
   // hours:         "Sun–Thu: 11am–7pm | Fri–Sat: 11am–8pm",
 
-  // ── MENU IMAGE ────────────────────────────────────────────────
-  // Upload your whiteboard photo alongside this index.html file
-  // on Cloudflare, then paste the filename below.
-  // Leave as "" to show the "coming soon" placeholder.
-  menuImageURL:     "https://i.imgur.com/BVGSUfx.jpeg",
-  // Example when ready:
-  // menuImageURL:  "menu-board.jpg",
-
   // ── SOCIAL LINKS ──────────────────────────────────────────────
   // Set any link to "" to hide that button.
   facebookURL:      "https://www.facebook.com/RoseEdenLobster",
@@ -251,6 +243,45 @@ footer p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; }
   #about .about-grid, #catering .catering-grid, #contact .contact-grid { grid-template-columns: 1fr; }
   section { padding: 3.5rem 1.5rem; }
 }
+
+/* ── PRINTED MENU ──────────────────────────────────────────────── */
+.menu-wrap { text-align: left; margin-top: 2rem; }
+.menu-feature { border: 2px solid var(--gold); background: rgba(201,162,75,0.08); padding: 1.7rem 1.8rem; margin-bottom: 2.8rem; text-align: center; }
+.menu-feature .kicker { font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); font-weight: 700; }
+.menu-feature h3 { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 900; color: var(--navy); margin: 0.35rem 0 0.6rem; }
+.menu-feature p { font-weight: 300; color: var(--navy-light); line-height: 1.7; max-width: 620px; margin: 0 auto 0.7rem; font-size: 0.95rem; }
+.menu-feature .price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--red); }
+.menu-block { margin-bottom: 2.8rem; }
+.menu-block > h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--navy); border-bottom: 2px solid var(--red); padding-bottom: 0.45rem; }
+.menu-note { font-size: 0.82rem; font-weight: 300; font-style: italic; color: var(--gray); margin: 0.6rem 0 0.2rem; }
+.menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 3rem; }
+.menu-row { display: flex; align-items: baseline; gap: 0.5rem; margin-top: 1rem; }
+.menu-row .name { font-weight: 600; color: var(--navy); font-size: 1rem; letter-spacing: 0.3px; }
+.menu-row .dots { flex: 1; border-bottom: 1px dotted rgba(15,42,68,0.35); transform: translateY(-4px); }
+.menu-row .price { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.menu-desc { font-size: 0.85rem; font-weight: 300; color: var(--navy-light); line-height: 1.5; margin-top: 0.2rem; }
+.menu-desc .add { color: var(--red); font-weight: 600; }
+.menu-table { width: 100%; border-collapse: collapse; margin-top: 1.2rem; }
+.menu-table th, .menu-table td { padding: 0.75rem 0.4rem; border-bottom: 1px solid rgba(15,42,68,0.15); text-align: center; vertical-align: middle; }
+.menu-table th { font-size: 0.68rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--red); font-weight: 700; }
+.menu-table th small { display: block; letter-spacing: 0.5px; text-transform: none; font-weight: 300; color: var(--gray); font-size: 0.75rem; margin-top: 0.2rem; }
+.menu-table td.rowname { text-align: left; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+.menu-table td.rowname small { display: block; font-family: 'Josefin Sans', sans-serif; font-weight: 300; font-size: 0.78rem; color: var(--gray); line-height: 1.4; margin-top: 0.15rem; }
+.menu-table td .p { display: block; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--navy); }
+.menu-table td .p.soft { color: var(--red); }
+.menu-table td .big { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--red); }
+.menu-legend { display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; font-size: 0.78rem; letter-spacing: 1px; color: var(--gray); }
+.menu-legend b { font-weight: 700; color: var(--navy); }
+.menu-legend b.soft { color: var(--red); }
+.menu-extras { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.3rem; }
+.menu-extras span { border: 1px solid rgba(193,39,45,0.35); padding: 0.45rem 1.1rem; font-size: 0.8rem; color: var(--red); font-weight: 600; letter-spacing: 0.5px; }
+.menu-footnote { text-align: center; font-size: 0.82rem; font-style: italic; color: var(--gray); margin-top: 1.8rem; }
+@media (max-width: 768px) {
+  .menu-cols { grid-template-columns: 1fr; gap: 0.5rem; }
+  .menu-table th, .menu-table td { padding: 0.55rem 0.15rem; }
+  .menu-table td.rowname { font-size: 0.95rem; }
+  .menu-table td .p { font-size: 0.9rem; }
+}
 </style>
 </head>
 <body>
@@ -323,7 +354,116 @@ footer p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; }
   <p class="section-label">What We're Servin'</p>
   <h2 class="section-title">The Menu</h2>
   <h4 class="section-disclaimer">Prices and Items are subject to change regularly</h4>
-  <div id="menuContent"></div>
+  <div class="menu-wrap">
+
+    <!-- FEATURED -->
+    <div class="menu-feature">
+      <p class="kicker">&#10024; World Famous &#10024;</p>
+      <h3>The Dogster Roll</h3>
+      <p>Buttered lobster meat piled on a Red Snapper hot dog, topped with crispy onions, green onions, Crystal mayo &amp; blueberry hot sauce.</p>
+      <p class="price">19.99</p>
+    </div>
+
+    <!-- LOBSTER MEALS -->
+    <div class="menu-block">
+      <h3>Lobster Meals</h3>
+      <p class="menu-note">Classic or Cajun. Every meal comes with corn, 1 lb of mussels &amp; drawn butter. Choose new shell or hard shell, in small (1 lb), medium (1.25+ lb) or large (1.5+ lb).</p>
+      <div class="menu-cols">
+        <div>
+          <div class="menu-row"><span class="name">Single</span><span class="dots"></span><span class="price">Market Price</span></div>
+          <p class="menu-desc">One lobster</p>
+          <div class="menu-row"><span class="name">Double</span><span class="dots"></span><span class="price">Market Price</span></div>
+          <p class="menu-desc">Two lobsters, two corn</p>
+        </div>
+        <div>
+          <div class="menu-row"><span class="name">The Feast</span><span class="dots"></span><span class="price">Market Price</span></div>
+          <p class="menu-desc">Four lobsters, four corn, 1 lb clams</p>
+        </div>
+      </div>
+      <div class="menu-extras">
+        <span>Sub clams or shrimp for mussels +5</span>
+        <span>Add lobster meat to anything +15</span>
+      </div>
+    </div>
+
+    <div class="menu-cols">
+
+      <!-- ROLLS -->
+      <div class="menu-block">
+        <h3>Rolls</h3>
+        <p class="menu-note">Served on a buttered brioche roll with chips &amp; a pickle.</p>
+        <div class="menu-row"><span class="name">Traditional</span><span class="dots"></span><span class="price">32.99</span></div>
+        <p class="menu-desc">Lobster meat tossed in mayo over lettuce</p>
+        <div class="menu-row"><span class="name">Naked</span><span class="dots"></span><span class="price">34.99</span></div>
+        <p class="menu-desc">Saut&eacute;ed in butter, served warm &mdash; <span class="add">make it compound butter +2</span></p>
+        <div class="menu-row"><span class="name">Cajun</span><span class="dots"></span><span class="price">35.99</span></div>
+        <p class="menu-desc">Cajun mayo, lettuce &amp; green onions</p>
+        <div class="menu-row"><span class="name">Crab</span><span class="dots"></span><span class="price">30.99</span></div>
+        <p class="menu-desc">Crab meat tossed in mayo over lettuce &mdash; <span class="add">make it Cajun +3</span></p>
+      </div>
+
+      <!-- CAJUN -->
+      <div class="menu-block">
+        <h3>Cajun</h3>
+        <p class="menu-note">Straight from Louisiana.</p>
+        <div class="menu-row"><span class="name">New Orleans Lobster Boil</span><span class="dots"></span><span class="price">42.99</span></div>
+        <p class="menu-desc">One medium (1.25+ lb) lobster boiled with corn, potatoes &amp; sausage</p>
+        <div class="menu-row"><span class="name">Gumbo</span><span class="dots"></span><span class="price">14.99</span></div>
+        <p class="menu-desc">Chicken &amp; sausage</p>
+        <div class="menu-row"><span class="name">Jambalaya</span><span class="dots"></span><span class="price">14.99</span></div>
+        <p class="menu-desc">Chicken &amp; sausage</p>
+        <div class="menu-row"><span class="name">Red Beans &amp; Rice</span><span class="dots"></span><span class="price">12.99</span></div>
+        <p class="menu-desc">Vegan as served &mdash; <span class="add">add andouille or vegan sausage +5</span></p>
+      </div>
+
+      <!-- BY THE POUND -->
+      <div class="menu-block">
+        <h3>By the Pound</h3>
+        <p class="menu-note">Cooked to order, or live to go.</p>
+        <div class="menu-row"><span class="name">Lobster &mdash; new shell</span><span class="dots"></span><span class="price">Market Price</span></div>
+        <div class="menu-row"><span class="name">Lobster &mdash; hard shell</span><span class="dots"></span><span class="price">Market Price</span></div>
+        <div class="menu-row"><span class="name">Clams</span><span class="dots"></span><span class="price">Market Price</span></div>
+        <div class="menu-row"><span class="name">Gulf Shrimp</span><span class="dots"></span><span class="price">Market Price</span></div>
+        <p class="menu-desc">16&ndash;20 count, sold by the &frac12; lb</p>
+        <div class="menu-row"><span class="name">Mussels</span><span class="dots"></span><span class="price">Market Price</span></div>
+      </div>
+
+      <!-- SIDES -->
+      <div class="menu-block">
+        <h3>Sides</h3>
+        <div class="menu-row"><span class="name">Lobster bisque</span><span class="dots"></span><span class="price">11.99</span></div>
+        <div class="menu-row"><span class="name">Clam chowder</span><span class="dots"></span><span class="price">9.99</span></div>
+        <div class="menu-row"><span class="name">&frac12; lb sausage</span><span class="dots"></span><span class="price">9.99</span></div>
+        <div class="menu-row"><span class="name">Potato salad</span><span class="dots"></span><span class="price">5.99</span></div>
+        <div class="menu-row"><span class="name">Hot dog</span><span class="dots"></span><span class="price">5.99</span></div>
+        <div class="menu-row"><span class="name">Boiled potatoes</span><span class="dots"></span><span class="price">3.99</span></div>
+        <div class="menu-row"><span class="name">Corn</span><span class="dots"></span><span class="price">3.99</span></div>
+        <div class="menu-row"><span class="name">Chips</span><span class="dots"></span><span class="price">3.99</span></div>
+        <div class="menu-row"><span class="name">Cole slaw</span><span class="dots"></span><span class="price">2.99</span></div>
+        <div class="menu-row"><span class="name">Extra butter</span><span class="dots"></span><span class="price">1.49</span></div>
+      </div>
+
+    </div>
+
+    <!-- DESSERT -->
+    <div class="menu-block">
+      <h3>Dessert</h3>
+      <div class="menu-cols">
+        <div>
+          <div class="menu-row"><span class="name">Blueberry pie</span><span class="dots"></span><span class="price">7.99</span></div>
+          <p class="menu-desc">Heat it up and/or make it &agrave; la mode <span class="add">+3</span></p>
+        </div>
+        <div>
+          <div class="menu-row"><span class="name">Blueberry soda float</span><span class="dots"></span><span class="price">8.99</span></div>
+          <p class="menu-desc">Morton's Moo vanilla ice cream + Old Soaker blueberry soda</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="menu-footnote">&#9733; All seafood is market price and changes with the boats.<br>
+    Prices shown here are a guide only and may not match the prices posted at the shack. The board at the window is always the current one.</p>
+
+  </div>
 </section>
 
 <div class="divider">&#9874; &#9874; &#9874;</div>
@@ -366,13 +506,6 @@ footer p { font-size: 0.75rem; color: var(--gray); letter-spacing: 1px; }
 const C = SITE_CONFIG;
 
 document.getElementById('heroAddress').textContent = C.address + ' \u2022 ' + C.city;
-
-var menuEl = document.getElementById('menuContent');
-if (C.menuImageURL) {
-  menuEl.innerHTML = '<div class="menu-image"><img src="' + C.menuImageURL + '" alt="Menu Board"></div>';
-} else {
-  menuEl.innerHTML = '<div class="menu-placeholder"><div class="icon">\uD83E\uDD9E</div><p>Menu coming soon for the 2026 season.<br>Check back closer to opening day!</p></div>';
-}
 
 document.getElementById('cateringContact').innerHTML = '<p>Ready to book? Reach out at <a href="mailto:' + C.cateringEmail + '">' + C.cateringEmail + '</a></p>';
 
